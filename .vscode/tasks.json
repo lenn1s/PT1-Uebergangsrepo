@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build: main",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-lc", "make main-compile"],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build: tests",
+      "type": "shell",
+      "command": "make",
+      "args": ["test-compile"],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

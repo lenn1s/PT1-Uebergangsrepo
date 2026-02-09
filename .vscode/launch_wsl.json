@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Main",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/out/main",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "build: main",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Tests: All",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/out/tests",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "build: tests",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
