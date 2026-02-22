@@ -1,8 +1,8 @@
 # Programmiertechnik II SS26, Übung 3
 
-Pro Übung gibt es 20 Punkte. Für die Zulassung zur Prüfung müssen in allen Übungen mindestens 50% der Punkte insgesamt sowie mindestens 25% in jeder einzelnen Übung erzielt werden.
+Pro Übung gibt es 20 Punkte. Für die Zulassung zur Prüfung müssen in allen Übungen insgesamt mindestens 50 % der Punkte sowie mindestens 25 % in jeder einzelnen Übung erzielt werden.
 
-Der Code für diese Aufgabe kann als Repository geklont und lokal kompiliert werden. Es ist dafür nötig, die Git-Submodule zu initialisieren und zu updaten (wichtig‼️):  
+Der Code für diese Aufgabe kann als Git-Repository geklont und lokal kompiliert werden. Dafür ist es nötig, die Git-Submodule zu initialisieren und zu aktualisieren (wichtig‼️):  
 
 ```bash
 git submodule update --init
@@ -15,7 +15,7 @@ make tests
 
 im Projektordner ausgeführt werden, um die Tests zu kompilieren. (Der Code in `main.cpp` kann unabhängig von den Tests mit `make main` kompiliert und ausgeführt werden.)
 
-Hinweis: Hilfestellung zum Setup des Dev Environments und des Debuggers finden Sie in Übung 1.
+Hinweis: Hilfestellung zum Setup der Entwicklungsumgebung und des Debuggers finden Sie in Übung 1.
 
 ## Aufgabe 1 – CountingComparator (3 Punkte)
 **Dateien:** `sorting.cpp`, `sorting.h`
@@ -45,8 +45,8 @@ Implementieren Sie:
 
 Zusatzanforderungen:
 - **Bubblesort:** Bricht vorzeitig ab, wenn ein Durchlauf ohne Vertauschung endet
-- **Mergesort:** In `merge()` prüfen, ob linke Teilliste vollständig vor rechter liegt → kein Vergleiche beim Merge nötig
-- **Quicksort:** Pivot ist immer das am weistesten **links** stehende Element
+- **Mergesort:** In `merge()` prüfen, ob linke Teilliste vollständig vor rechter liegt → keine Vergleiche beim Merge nötig
+- **Quicksort:** Pivot ist immer das am weitesten **links** stehende Element
 
 > Achtung: **Alle Vergleiche** (auch im Aux-Array bei Mergesort) müssen über den **CountingComparator (`comp`)** erfolgen. Direkte Vergleiche von Array-Elementen sind nicht erlaubt.
 
@@ -57,7 +57,7 @@ Zusatzanforderungen:
 
 Die implementierten Sortieralgorithmen sollen nun vermessen werden. `main.cpp` misst Best- und Worst-Case aller Algorithmen für **n = 10, 100, 1000**.
 
-Implementieren Sie **6 Generatoren** (jeweils für das Best/Worst Case Input je Algorithmus).
+Implementieren Sie **6 Generatoren** (jeweils für den Best-/Worst-Case-Input je Algorithmus).
 
 Vorgaben:
 - deterministisch, für beliebiges `n`
@@ -67,11 +67,11 @@ Vorgaben:
 Hinweise:
 - **Bubblesort:** Best- und Worst-Case sind einfach zu erzeugen
 - **Mergesort Best-Case:** ergibt sich aus der Optimierung in Aufgabe 2
-- **Mergesort Worst-Case:** rekursives alternierendes Aufteilen (0,2,4,… / 1,3,5,…)  
+- **Mergesort Worst-Case:** rekursives alternierendes Aufteilen (0, 2, 4, … / 1, 3, 5, …)  
   Die Rekursion terminiert bei Teillisten der Länge 1. Was muss bei Länge 2 passieren?  
   Dieser Datensatz maximiert die Anzahl notwendiger Vergleiche, ohne jedoch die asymptotische Komplexität von Mergesort zu verändern.
 - **Quicksort Best-Case:** Bei der Ausführung von Quicksort (mit linkem Pivot) müssen in jeder Rekursion möglichst gleich große Teilarrays entstehen. Dabei ist zu beachten, dass das Pivot-Element erst im Verlauf der Partition an seine endgültige Position gelangt.
-- **Quicksort Worst-Case:** auf ersten Blick vielleicht unintuitiv, aber mit bisherigem Code leicht zu generieren
+- **Quicksort Worst-Case:** auf den ersten Blick vielleicht unintuitiv, aber mit bisherigem Code leicht zu generieren
 
 Es existieren mehrere korrekte Lösungen für diese Generatoren. Aus diesem Grund wird nur die Anzahl der Vergleiche getestet.
 
@@ -92,7 +92,7 @@ Diskutieren Sie:
 - Eignet sich die Anzahl der Vergleiche als praktische Messgröße?
 
 # Abgabehinweise
-- Bearbeiten Sie die mit `// TODO` markierte Stellen im Code.
-- Für die in der Aufgabenstellung beschriebenen Datentypen und Algorithmen sollen die eigenen bzw. vorgegebenen Implementierungen genutzt werden. Davon abgesehen darf die STL verwendet werden. Notieren Sie sich für das Testatgespräch: Welche Teile der STL könnten theoretisch benutzt werden um die Aufgaben zu implementieren?
+- Bearbeiten Sie die mit `// TODO` markierten Stellen im Code.
+- Für die in der Aufgabenstellung beschriebenen Datentypen und Algorithmen sollen die eigenen bzw. vorgegebenen Implementierungen genutzt werden. Davon abgesehen darf die STL verwendet werden. Notieren Sie sich für das Testatgespräch: Welche Teile der STL könnten theoretisch benutzt werden, um die Aufgaben zu implementieren?
 - Korrekte Speicherverwaltung (new/delete, new[]/delete[] oder ggf. Initialisierung im Stack) gehört zur Aufgabenstellung :)
-- Die Tests sollen alle grün sein (`make tests`) sind aber in erster Linie eine Hilfestellung, keine Garantie für volle Punktzahl - dafür gibt es die Testatgespräche.
+- Die Tests sollen alle grün sein (`make tests`), sind aber in erster Linie eine Hilfestellung und keine Garantie für volle Punktzahl - dafür gibt es die Testatgespräche.
